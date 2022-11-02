@@ -1,0 +1,83 @@
+$breakpoints: (
+  "sp": "screen and (max-width: 767px)",
+  "tab": "screen and (min-width: 768px) and (max-width: 960px)",
+  "pc": "screen and (min-width: 961px)",
+  "tab-pc": "screen and (min-width: 768px)",
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+html {
+  overflow-x: hidden;
+  color: #333333;
+  font-size: 62.5%;
+  font-family: "Noto Sans JP", "Arial", "Helvetica", "Segoe UI", YuGothic, "Yu Gothic", "メイリオ", Meiryo,
+    "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="time"],
+textarea,
+select {
+  border: 1px #333 solid;
+  border-radius: 5px;
+  padding-left: 0.3em;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+}
+input[type="time"] {
+  width: 8rem;
+  height: 3rem;
+}
+select {
+  width: 5rem;
+}
+@include mq("sp") {
+  .sp-only {
+    display: block;
+  }
+  .pc-only {
+    display: none;
+  }
+}
+@include mq("pc") {
+  .sp-only {
+    display: none;
+  }
+  .pc-only {
+    display: block;
+  }
+}
+body {
+  font-size: 1.6rem;
+}
+
+.container {
+  margin: auto;
+  width: 100rem;
+  max-width: 90vw;
+
+  @include mq() {
+    max-width: 90vw;
+  }
+}
+
+.btn {
+  margin-left: auto;
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 5%;
+  background-color: lightskyblue;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+input:disabled {
+  background-color: rgb(151, 151, 151);
+}

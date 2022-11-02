@@ -1,0 +1,350 @@
+header {
+  padding: 1rem;
+  width: 100vw;
+  position: fixed;
+  z-index: 800;
+  height: 14rem;
+  background-color: #e7eaed;
+}
+header .event-title {
+  font-size: 2.5rem;
+}
+header .event-title a {
+  color: rgb(50, 50, 200);
+}
+header .btn {
+  margin-bottom: 1rem;
+  font-size: 1.6rem;
+}
+header select {
+  width: 10rem;
+}
+
+.header-adjust {
+  width: 100vw;
+  height: 14rem;
+}
+
+#addTag {
+  width: 15rem;
+}
+
+.event-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+}
+@media screen and (max-width: 767px) {
+  .event-block {
+    margin: 0.5rem 0;
+    max-width: 90vw;
+    padding: 0.5rem;
+  }
+}
+.event-block .handle {
+  width: 3rem;
+}
+.event-block .others {
+  margin-top: 0.5rem;
+  align-self: flex-start;
+  margin-left: 1rem;
+  flex: 1;
+  overflow-wrap: anywhere;
+}
+.event-block .others .others-content {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .event-block .others .others-content {
+    font-size: 1.2rem;
+  }
+}
+.event-block .others span {
+  font-size: 1.2rem;
+}
+.event-block .others span:hover {
+  cursor: pointer;
+}
+.event-block .others a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.block-right {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+@media screen and (max-width: 767px) {
+  .block-right {
+    flex-direction: column;
+  }
+}
+.block-right .cost {
+  width: 8rem;
+}
+@media screen and (max-width: 767px) {
+  .block-right .cost {
+    position: absolute;
+    right: 5rem;
+  }
+}
+.block-right div {
+  margin-left: 1rem;
+  width: 4rem;
+  height: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .block-right div {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+div.handle {
+  align-self: flex;
+  width: 5rem;
+  height: 8rem;
+}
+div.handle div {
+  position: relative;
+  display: block;
+  height: 8rem;
+}
+div.handle div i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  padding: 0;
+  transform: translate(-50%, -50%);
+}
+
+#event-table {
+  line-height: 1.5;
+  overflow-x: hidden;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 767px) {
+  #event-table {
+    width: 90vw;
+  }
+}
+
+.btn_delete,
+.btn_edit {
+  position: relative;
+}
+.btn_delete i,
+.btn_edit i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media screen and (max-width: 767px) {
+  .btn_edit {
+    margin-top: 0.5rem;
+  }
+}
+.schedule-block {
+  background-color: rgb(194, 241, 254);
+}
+.schedule-block .schedule-times {
+  padding: 0.5rem 2rem;
+  border-radius: 0.5rem;
+  position: relative;
+  width: 10rem;
+  height: 6.5rem;
+  top: 4rem;
+  transform: translateY(-50%);
+  background-color: #91aefe;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 767px) {
+  .schedule-block .schedule-times {
+    padding: 0.5rem 0;
+    width: 6rem;
+    height: auto;
+  }
+}
+.schedule-block .start-time {
+  text-align: center;
+  font-size: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .schedule-block .start-time {
+    font-size: 1.6rem;
+  }
+}
+.schedule-block .duration {
+  text-align: center;
+  font-size: 1.2rem;
+}
+@media screen and (max-width: 767px) {
+  .schedule-block .duration {
+    font-size: 1rem;
+  }
+}
+.schedule-block .schedule-title {
+  margin-top: calc(4rem - 0.75em);
+  margin-left: 1rem;
+  font-size: 2rem;
+}
+.schedule-block .schedule-title a {
+  color: rgb(50, 50, 200);
+}
+.schedule-block .schedule-title span {
+  border-bottom: 1px solid #333333;
+}
+@media screen and (max-width: 767px) {
+  .schedule-block .schedule-title {
+    font-size: 1.6rem;
+  }
+}
+.schedule-block .contents {
+  flex: 1;
+}
+.schedule-block .schedule-left {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+}
+
+.transportation-block {
+  background-color: #eef3fc;
+}
+.transportation-block .start-time {
+  display: flex;
+  align-items: center;
+  height: 8rem;
+  font-size: 2rem;
+}
+@media screen and (max-width: 767px) {
+  .transportation-block .start-time {
+    font-size: 1.6rem;
+  }
+}
+.transportation-block .means {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 0.5rem;
+  width: 4rem;
+}
+@media screen and (max-width: 767px) {
+  .transportation-block .means {
+    width: 2rem;
+  }
+}
+.transportation-block .means i {
+  display: flex;
+  justify-content: center;
+}
+@media screen and (max-width: 767px) {
+  .transportation-block .means i::before {
+    transform: scale(0.5);
+  }
+}
+.transportation-block .means::before, .transportation-block .means::after {
+  display: block;
+  width: 50%;
+  border-right: 1px solid;
+  content: "";
+}
+.transportation-block .means::before {
+  height: 1.5rem;
+}
+@media screen and (max-width: 767px) {
+  .transportation-block .means::before {
+    height: 2.8rem;
+  }
+}
+.transportation-block .means::after {
+  height: calc(100% - 6.5rem);
+}
+@media screen and (max-width: 767px) {
+  .transportation-block .means::after {
+    height: calc(100% - 5.2rem);
+  }
+}
+.transportation-block .contents {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.transportation-block .duration {
+  margin-top: calc(4rem - 0.75em);
+  margin-left: 1rem;
+}
+
+.transportation-left {
+  flex: 1;
+  display: flex;
+}
+
+.modal_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 910;
+  overflow-x: hidden;
+  padding: 2rem;
+  max-width: 100%;
+  max-height: 80%;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.modal_close_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: #123452;
+  color: #ffffff;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+@media screen and (max-width: 767px) {
+  .modal_close_btn {
+    width: 3rem;
+    height: 3rem;
+  }
+}
+
+.modal_close_btn > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#insert-others,
+#edit-others {
+  width: 25rem;
+  height: 20rem;
+}

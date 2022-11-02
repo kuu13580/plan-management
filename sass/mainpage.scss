@@ -1,0 +1,344 @@
+$breakpoints: (
+  "sp": "screen and (max-width: 767px)",
+  "tab": "screen and (min-width: 768px) and (max-width: 960px)",
+  "pc": "screen and (min-width: 961px)",
+  "tab-pc": "screen and (min-width: 768px)",
+) !default;
+
+@mixin mq($breakpoint: sp) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+// ヘッダー
+$header-height : 14rem;
+header {
+  .event-title{
+    font-size: 2.5rem;
+  }
+  .btn{
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+  }
+  padding: 1rem;
+  width: 100vw;
+  position: fixed;
+  z-index: 800;
+  height: $header-height;
+  background-color: #e7eaed;
+  select {
+    width: 10rem;
+  }
+}
+.header-adjust {
+  width: 100vw;
+  height: $header-height;
+}
+#addTag {
+  width: 15rem;
+}
+// ブロック共通
+
+.event-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  @include mq() {
+    margin: 0.5rem 0;
+    max-width: 90vw;
+    padding: 0.5rem;
+  }
+  .handle {
+    width: 3rem;
+  }
+
+  .others {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+    margin-left: 1rem;
+    flex: 1;
+    overflow-wrap: anywhere;
+    .others-content {
+      display: none;
+      @include mq() {
+        font-size: 1.2rem;
+      }
+    }
+    span {
+      font-size: 1.2rem;
+    }
+    span:hover {
+      cursor: pointer;
+    }
+  }
+  .others a {
+    color: blue;
+    text-decoration: underline;
+  }
+}
+
+.block-right {
+  display: flex;
+  justify-content: flex-start;
+  align-self: flex-start;
+  @include mq() {
+    flex-direction: column;
+  }
+  .cost {
+    width: 8rem;
+    @include mq() {
+      position: absolute;
+      right: 5rem;
+    }
+  }
+
+  div {
+    margin-left: 1rem;
+    width: 4rem;
+    height: 4rem;
+    @include mq() {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
+
+div.handle {
+  align-self: flex;
+  width: 5rem;
+  height: 8rem;
+
+  div {
+    position: relative;
+    display: block;
+    height: 8rem;
+  }
+
+  div i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translate(-50%, -50%);
+  }
+}
+
+#event-table {
+  line-height: 1.5;
+  overflow-x: hidden;
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  @include mq() {
+    width: 90vw;
+  }
+}
+.btn_delete,
+.btn_edit {
+  position: relative;
+  i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@include mq() {
+  .btn_edit {
+    margin-top: 0.5rem;
+  }
+}
+
+// ------------------スケジュールブロック
+
+.schedule-block {
+  background-color: rgb(194, 241, 254);
+
+  .schedule-times {
+    padding: 0.5rem 2rem;
+    border-radius: 0.5rem;
+    position: relative;
+    width: 10rem;
+    height: 6.5rem;
+    top: 4rem;
+    transform: translateY(-50%);
+    background-color: #91aefe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    @include mq() {
+      padding: 0.5rem 0;
+      width: 6rem;
+      height: auto;
+    }
+  }
+  .start-time {
+    text-align: center;
+    font-size: 2rem;
+    @include mq() {
+      font-size: 1.6rem;
+    }
+  }
+
+  .duration {
+    text-align: center;
+    font-size: 1.2rem;
+    @include mq() {
+      font-size: 1rem;
+    }
+  }
+
+  .schedule-title {
+    margin-top: calc(4rem - 0.75em);
+    margin-left: 1rem;
+    font-size: 2rem;
+    span {
+      border-bottom: 1px solid #333333;
+    }
+    @include mq() {
+      font-size: 1.6rem;
+    }
+  }
+  .contents {
+    flex: 1;
+  }
+
+  .schedule-left {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+  }
+}
+
+// -------------------移動ブロック
+.transportation-block {
+  // background-color: rgb(197, 255, 189);
+  background-color: #eef3fc;
+
+  .start-time {
+    display: flex;
+    align-items: center;
+    height: 8rem;
+    font-size: 2rem;
+    @include mq() {
+      font-size: 1.6rem;
+    }
+  }
+
+  .means {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 0.5rem;
+    width: 4rem;
+    @include mq() {
+      width: 2rem;
+    }
+    i {
+      display: flex;
+      justify-content: center;
+      &::before {
+        @include mq() {
+          transform: scale(0.5);
+        }
+      }
+    }
+
+    &::before,
+    &::after {
+      display: block;
+      width: 50%;
+      border-right: 1px solid;
+      content: "";
+    }
+
+    &::before {
+      height: 1.5rem;
+      @include mq() {
+        height: 2.8rem;
+      }
+    }
+
+    &::after {
+      height: calc(100% - 6.5rem);
+      @include mq() {
+        height: calc(100% - 5.2rem);
+      }
+    }
+  }
+  .contents {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .duration {
+    margin-top: calc(4rem - 0.75em);
+    margin-left: 1rem;
+  }
+}
+
+.transportation-left {
+  flex: 1;
+  display: flex;
+}
+
+//-----------------------モーダルウィンドウ
+.modal_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 900;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal_content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 910;
+  overflow-x: hidden;
+  padding: 2rem;
+  max-width: 100%;
+  max-height: 80%;
+  background-color: #ffffff;
+  transform: translate(-50%, -50%);
+}
+
+.modal_close_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  @include mq() {
+    width: 3rem;
+    height: 3rem;
+  }
+  background-color: #123452;
+  color: #ffffff;
+  vertical-align: middle;
+  text-align: center;
+  cursor: pointer;
+}
+
+.modal_close_btn > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#insert-others,
+#edit-others {
+  width: 25rem;
+  height: 20rem;
+}

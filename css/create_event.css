@@ -1,0 +1,31 @@
+#create_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-wrapper {
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+.unit {
+  display: inline-block;
+}
+
+.car-options label {
+  width: 8em;
+  text-align: right;
+  margin-right: 2rem;
+}
+.car-options span {
+  width: 5em;
+  margin-left: 1em;
+}
+.car-options div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.car-options input[type=number] {
+  width: 5rem;
+}
