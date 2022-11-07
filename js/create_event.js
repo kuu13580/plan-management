@@ -18,6 +18,7 @@ $(function(){
       }
     }).done((data)=>{
       // メインページに移動
+      window.alert("●注意●\n次ページのURLを必ずメモ、もしくはグループで共有して下さい。\n一度ブラウザを閉じると閲覧できなくなる可能性があります。");
       location.href = "mainpage.php?key=" + data;
     }).fail((jqXHR, textStatus, errorThrown) =>{
       $(body).text("エラーが発生しました。");
