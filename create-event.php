@@ -3,8 +3,8 @@ $title = "イベント作成";
 $description = "イベント作成ページ";
 include "php/_header.php";
 ?>
-<link rel="stylesheet" href="css/create_event.css">
-<script src="js/create_event.js" defer></script>
+<link rel="stylesheet" href="css/create_event.css?ver=1.2.0">
+<script src="js/create_event.js?ver=1.2.0" defer></script>
 </head>
 
 <body>

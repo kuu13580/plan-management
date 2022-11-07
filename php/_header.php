@@ -15,11 +15,11 @@
     rel="stylesheet">
   <!-- StyleSheets -->
   <link rel="stylesheet" href="css/destyle.css">
-  <link rel="stylesheet" href="css/style.css?ver=1.1.3">
+  <link rel="stylesheet" href="css/style.css?ver=1.2.0">
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/themes/smoothness/jquery-ui.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
   <script src="https://kit.fontawesome.com/ba4c907af4.js" crossorigin="anonymous"></script>
-  <script src="js/main.js?ver=1.1.1"></script>
+  <script src="js/main.js?ver=1.2.0"></script>

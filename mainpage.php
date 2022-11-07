@@ -8,8 +8,8 @@ if (!$_GET["key"]) {
 }
 $event_key = $_GET["key"];
 ?>
-<link rel="stylesheet" href="css/mainpage.css?ver=1.1.10">
-<script src="js/mainpage.js?ver=1.1.8" defer></script>
+<link rel="stylesheet" href="css/mainpage.css?ver=1.2.0">
+<script src="js/mainpage.js?ver=1.2.0" defer></script>
 </head>
 
 <body>
