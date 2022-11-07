@@ -138,8 +138,8 @@ div.handle {
     width: 90vw;
   }
 }
-.btn_delete,
-.btn_edit {
+.btn-delete,
+.btn-edit {
   position: relative;
   i {
     position: absolute;
@@ -149,7 +149,7 @@ div.handle {
   }
 }
 @include mq() {
-  .btn_edit {
+  .btn-edit {
     margin-top: 0.5rem;
   }
 }
@@ -289,7 +289,7 @@ div.handle {
 }
 
 //-----------------------モーダルウィンドウ
-.modal_bg {
+.modal-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -300,7 +300,7 @@ div.handle {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal_content {
+.modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -313,7 +313,7 @@ div.handle {
   transform: translate(-50%, -50%);
 }
 
-.modal_close_btn {
+.modal-close-btn {
   position: absolute;
   top: 0;
   right: 0;
@@ -330,7 +330,7 @@ div.handle {
   cursor: pointer;
 }
 
-.modal_close_btn > div {
+.modal-close-btn > div {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -341,4 +341,14 @@ div.handle {
 #edit-others {
   width: 25rem;
   height: 20rem;
+}
+
+.create-btn-wrapper{
+  text-align: center;
+  .modal-open{
+    padding: .5rem 10rem;
+    background-color: inherit;
+    border: 0.2rem #333 dashed;
+    margin: 2rem 0;
+  }
 }
