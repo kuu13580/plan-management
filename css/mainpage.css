@@ -13,6 +13,11 @@ header .btn {
   margin-bottom: 1rem;
   font-size: 1.6rem;
 }
+@media screen and (max-width: 767px) {
+  header {
+    height: 16rem;
+  }
+}
 header select {
   width: 10rem;
 }
@@ -20,6 +25,11 @@ header select {
 .header-adjust {
   width: 100vw;
   height: 14rem;
+}
+@media screen and (max-width: 767px) {
+  .header-adjust {
+    height: 16rem;
+  }
 }
 
 #addPage {
@@ -305,10 +315,22 @@ div.handle div i {
   z-index: 910;
   overflow-x: hidden;
   padding: 2rem;
-  max-width: 100%;
+  width: 50rem;
   max-height: 80%;
   background-color: #ffffff;
   transform: translate(-50%, -50%);
+}
+@media screen and (max-width: 767px) {
+  .modal-content {
+    max-width: 80%;
+  }
+}
+.modal-content label {
+  font-weight: bold;
+}
+
+.transportation-contents label:not(:first-of-type) {
+  font-weight: normal;
 }
 
 .modal-close-btn {
@@ -350,5 +372,5 @@ div.handle div i {
   padding: 0.5rem 10rem;
   background-color: inherit;
   border: 0.2rem #333 dashed;
-  margin: 2rem 0;
+  margin: 2rem 0 5rem;
 }

@@ -10,8 +10,7 @@ $breakpoints: (
     @content;
   }
 }
-// ヘッダー
-$header-height : 14rem;
+// -------------------------ヘッダー
 header {
   .event-title{
     font-size: 2.5rem;
@@ -24,7 +23,10 @@ header {
   width: 100vw;
   position: fixed;
   z-index: 800;
-  height: $header-height;
+  height: 14rem;
+  @include mq() {
+    height: 16rem;
+  }
   background-color: #e7eaed;
   select {
     width: 10rem;
@@ -32,7 +34,10 @@ header {
 }
 .header-adjust {
   width: 100vw;
-  height: $header-height;
+  height: 14rem;
+  @include mq() {
+    height: 16rem;
+  }
 }
 #addPage {
   width: 15rem;
@@ -307,10 +312,20 @@ div.handle {
   z-index: 910;
   overflow-x: hidden;
   padding: 2rem;
-  max-width: 100%;
+  width: 50rem;
+  @include mq() {
+    max-width: 80%;
+  }
   max-height: 80%;
   background-color: #ffffff;
   transform: translate(-50%, -50%);
+  label{
+    font-weight: bold;
+  }
+}
+
+.transportation-contents label:not(:first-of-type){
+  font-weight: normal;
 }
 
 .modal-close-btn {
@@ -349,6 +364,9 @@ div.handle {
     padding: .5rem 10rem;
     background-color: inherit;
     border: 0.2rem #333 dashed;
-    margin: 2rem 0;
+    margin: 2rem 0 5rem;
   }
 }
+
+//-----------------------フッター
+

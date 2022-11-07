@@ -15,25 +15,32 @@ $event_key = $_GET["key"];
 <body>
   <header>
     <div class="container">
+    <a href="index.php">
+      <div class="logo">
+        <img src="img/favicon.png" alt="アイコン">
+        <div class="logo-text">たびしぇあ</div>
+      </div>
+    </a>
       <div class="event-title">ここにイベントタイトル</div>
       <!-- <button class="btn btn-refresh">更新</button> -->
-      ページ：<select id="pages">
-        </select><br>
-        <input type="text" name="addPage" id="addPage">
-        <button class="btn btn-addPage">ページ追加</button>
+      現在のページ：<select id="pages">
+        </select>
         <button class="btn btn-deletePage">ページ削除</button>
+        <br class="sp-only">
+        <input type="text" name="addPage" id="addPage" placeholder="新規ページ名">
+        <button class="btn btn-addPage">ページ追加</button>
       </div>
     </header>
     <div class="header-adjust"></div>
     <!-- イベント作成モーダル -->
     <div id="modal01" class="modal-bg">
       <div class="modal-content">
-        <div class="form-wrapper container">
+        <div class="form-wrapper">
           <form action="" method="POST" id="insert-form">
             <div><label for="insert-type">種類</label><label><input type="radio" name="insert-type" value="schedule">予定</label><label><input type="radio" name="insert-type" value="transportation">移動</label></div>
-            <div class="schedule-contents"><label for="insert-contents">内容</label><input type="text" id="insert-contents"
+            <div class="schedule-contents" style="display: none;"><label for="insert-contents">内容</label><input type="text" id="insert-contents"
             required></div>
-            <div class="transportation-contents" style="display: none;"><label for="insert-contents">移動手段</label>
+            <div class="transportation-contents" style="display: none;"><label for="insert-contents">移動手段</label><br>
             <?php
           $means = array(
             "walk" => "徒歩",
@@ -69,12 +76,12 @@ $event_key = $_GET["key"];
 <!-- イベント編集モーダル -->
 <div id="modal02" class="modal-bg">
   <div class="modal-content">
-    <div class="form-wrapper container">
+    <div class="form-wrapper">
       <form action="" method="POST" id="edit-form">
         <input type="hidden" id="edit-id" value="0">
         <input type="hidden" id="edit-type" value="x">
           <div class="schedule-contents"><label>内容</label><input type="text" id="edit-contents" required></div>
-          <div class="transportation-contents"><label for="edit-contents">移動手段</label>
+          <div class="transportation-contents"><label for="edit-contents">移動手段</label><br>
           <?php
 foreach ($means as $key => $value) {
   ?>
@@ -100,4 +107,5 @@ foreach ($means as $key => $value) {
   <div id="event-table" data-key="<?php echo $event_key; ?>"></div>
   <div class="create-btn-wrapper"><button class="modal-open btn" data-target="modal01">＋</button></div>
 </section>
+<?php include "php/_footer.php"; ?>
 </body>

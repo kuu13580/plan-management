@@ -317,7 +317,7 @@ $(function () {
   });
   // =========================================タグ削除
   $(".btn-deletePage").on("click", () => {
-    if (window.confirm("タグを削除してもよろしいですか？")) {
+    if (window.confirm("ページを削除してもよろしいですか？")) {
       let page = $("#pages").val();
       let data = {
         "command": "deletePages",

@@ -38,6 +38,10 @@
   width: 5rem;
 }
 
+header {
+  background-color: #e7eaed;
+}
+
 .title {
   font-size: 3rem;
   text-align: center;

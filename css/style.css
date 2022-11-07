@@ -6,10 +6,6 @@ html {
   font-family: "Noto Sans JP", "Arial", "Helvetica", "Segoe UI", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", "ヒラギノ角ゴシック", "Hiragino Sans", sans-serif;
 }
 
-a:hover{
-  opacity: 0.7;
-}
-
 input[type=text],
 input[type=number],
 input[type=time],
@@ -20,6 +16,8 @@ select {
   padding-left: 0.3em;
   margin-left: 1rem;
   margin-bottom: 0.5rem;
+  width: 100%;
+  max-width: 20rem;
 }
 
 input[type=time] {
@@ -75,4 +73,36 @@ body {
 
 input:disabled {
   background-color: rgb(151, 151, 151);
+}
+
+footer {
+  width: 100vw;
+  background-color: #e7eaed;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+
+.logo {
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 767px) {
+  .logo {
+    height: 3rem;
+  }
+}
+.logo img {
+  height: 80%;
+}
+
+.logo-text {
+  font-size: 3rem;
+}
+@media screen and (max-width: 767px) {
+  .logo-text {
+    font-size: 2rem;
+  }
 }

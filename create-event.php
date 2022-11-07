@@ -8,6 +8,14 @@ include "php/_header.php";
 </head>
 
 <body>
+  <header>
+    <a href="index.php">
+      <div class="logo">
+        <img src="img/favicon.png" alt="アイコン">
+        <div class="logo-text">たびしぇあ</div>
+      </div>
+    </a>
+  </header>
   <div class="container">
   <div class="title">イベント新規作成</div>
     <div class="form-wrapper">
@@ -27,6 +35,7 @@ include "php/_header.php";
       </form>
     </div>
   </div>
+  <?php include "php/_footer.php"; ?>
 </body>
 
 </html>
