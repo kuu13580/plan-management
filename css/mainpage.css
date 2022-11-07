@@ -13,7 +13,7 @@ header .btn {
   margin-bottom: 1rem;
   font-size: 1.6rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   header {
     height: 16rem;
   }
@@ -26,7 +26,7 @@ header select {
   width: 100vw;
   height: 14rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .header-adjust {
     height: 16rem;
   }
@@ -45,7 +45,7 @@ header select {
   width: 100%;
   border-radius: 0.5rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .event-block {
     margin: 0.5rem 0;
     max-width: 90vw;
@@ -65,7 +65,7 @@ header select {
 .event-block .others .others-content {
   display: none;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .event-block .others .others-content {
     font-size: 1.2rem;
   }
@@ -86,7 +86,7 @@ header select {
   justify-content: flex-start;
   align-self: flex-start;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .block-right {
     flex-direction: column;
   }
@@ -94,7 +94,7 @@ header select {
 .block-right .cost {
   width: 8rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .block-right .cost {
     position: absolute;
     right: 5rem;
@@ -105,7 +105,7 @@ header select {
   width: 4rem;
   height: 4rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .block-right div {
     width: 3rem;
     height: 3rem;
@@ -138,7 +138,7 @@ div.handle div i {
   max-width: 100%;
   width: 100%;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   #event-table {
     width: 90vw;
   }
@@ -156,7 +156,7 @@ div.handle div i {
   transform: translate(-50%, -50%);
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .btn-edit {
     margin-top: 0.5rem;
   }
@@ -178,7 +178,7 @@ div.handle div i {
   justify-content: center;
   flex-direction: column;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .schedule-block .schedule-times {
     padding: 0.5rem 0;
     width: 6rem;
@@ -189,7 +189,7 @@ div.handle div i {
   text-align: center;
   font-size: 2rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .schedule-block .start-time {
     font-size: 1.6rem;
   }
@@ -198,7 +198,7 @@ div.handle div i {
   text-align: center;
   font-size: 1.2rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .schedule-block .duration {
     font-size: 1rem;
   }
@@ -211,7 +211,7 @@ div.handle div i {
 .schedule-block .schedule-title span {
   border-bottom: 1px solid #333333;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .schedule-block .schedule-title {
     font-size: 1.6rem;
   }
@@ -234,7 +234,7 @@ div.handle div i {
   height: 8rem;
   font-size: 2rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .transportation-block .start-time {
     font-size: 1.6rem;
   }
@@ -246,7 +246,7 @@ div.handle div i {
   margin-left: 0.5rem;
   width: 4rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .transportation-block .means {
     width: 2rem;
   }
@@ -255,7 +255,7 @@ div.handle div i {
   display: flex;
   justify-content: center;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .transportation-block .means i::before {
     transform: scale(0.5);
   }
@@ -269,7 +269,7 @@ div.handle div i {
 .transportation-block .means::before {
   height: 1.5rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .transportation-block .means::before {
     height: 2.8rem;
   }
@@ -277,7 +277,7 @@ div.handle div i {
 .transportation-block .means::after {
   height: calc(100% - 6.5rem);
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .transportation-block .means::after {
     height: calc(100% - 5.2rem);
   }
@@ -320,7 +320,7 @@ div.handle div i {
   background-color: #ffffff;
   transform: translate(-50%, -50%);
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .modal-content {
     max-width: 80%;
   }
@@ -345,7 +345,7 @@ div.handle div i {
   text-align: center;
   cursor: pointer;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .modal-close-btn {
     width: 3rem;
     height: 3rem;

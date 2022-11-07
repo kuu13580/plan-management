@@ -29,7 +29,7 @@ select {
   width: 5rem;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .sp-only {
     display: block;
   }
@@ -37,7 +37,7 @@ select {
     display: none;
   }
 }
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 521px) {
   .sp-only {
     display: none;
   }
@@ -54,9 +54,9 @@ body {
   width: 100rem;
   max-width: 90vw;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .container {
-    max-width: 90vw;
+    width: 90vw;
   }
 }
 
@@ -89,7 +89,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .logo {
     height: 3rem;
   }
@@ -101,7 +101,7 @@ footer {
 .logo-text {
   font-size: 3rem;
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 520px) {
   .logo-text {
     font-size: 2rem;
   }
