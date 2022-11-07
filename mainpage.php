@@ -17,11 +17,11 @@ $event_key = $_GET["key"];
     <div class="container">
       <div class="event-title">ここにイベントタイトル</div>
       <!-- <button class="btn btn-refresh">更新</button> -->
-      ページ：<select id="tags">
+      ページ：<select id="pages">
         </select><br>
-        <input type="text" name="addTag" id="addTag">
-        <button class="btn btn-addTag">ページ追加</button>
-        <button class="btn btn-deleteTag">ページ削除</button>
+        <input type="text" name="addPage" id="addPage">
+        <button class="btn btn-addPage">ページ追加</button>
+        <button class="btn btn-deletePage">ページ削除</button>
       </div>
     </header>
     <div class="header-adjust"></div>
