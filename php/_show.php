@@ -33,16 +33,16 @@ try {
   // ==================================================データベース接続
     include "_connectDB.php";
     $event_key = $_POST["key"];
-    if($_POST["tag"] != ""){
-      $tag = $_POST["tag"];
+    if($_POST["page"] != ""){
+      $page = $_POST["page"];
     }else{
-      $sql = $dbh->prepare("SELECT DISTINCT(tag) FROM blocks");
+      $sql = $dbh->prepare("SELECT DISTINCT(page) FROM blocks");
       $sql->execute();
-      $tag = $sql->fetch()[0];
+      $page = $sql->fetch()[0];
     }
-    $sql = $dbh->prepare("SELECT * FROM blocks JOIN block_orders ON blocks.block_id = block_orders.block_id WHERE blocks.event_key = ? AND tag = ? ORDER BY order_num");
+    $sql = $dbh->prepare("SELECT * FROM blocks JOIN block_orders ON blocks.block_id = block_orders.block_id WHERE blocks.event_key = ? AND page = ? ORDER BY order_num");
     $sql->bindValue(1, $event_key);
-    $sql->bindValue(2, $tag);
+    $sql->bindValue(2, $page);
     $sql->execute();
     $tp = new TimePrepare();
     $order = 0;

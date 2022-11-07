@@ -15,7 +15,7 @@ const data_type = {
   "others": "none",
   "last": "number",
   "block_id": "number",
-  "tag": "text"
+  "page": "text"
 }
 function check_input(data) {
   let check = true;

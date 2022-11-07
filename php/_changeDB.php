@@ -27,7 +27,7 @@ try {
         } else {
             $sql->execute(array($event_key, $_POST["name"], (int)$_POST["num"], null, null, convertNull($_POST["others"])));
         }
-        $sql = $dbh->prepare("INSERT INTO blocks(event_key, start_time, duration, contents, cost, block_type, others, tag) VALUE (?, \"00:00\", \"00:00\", \"予定を追加\", null, \"schedule\", null, \"1日目\")");
+        $sql = $dbh->prepare("INSERT INTO blocks(event_key, start_time, duration, contents, cost, block_type, others, page) VALUE (?, \"00:00\", \"00:00\", \"予定を追加\", null, \"schedule\", null, \"1日目\")");
         $sql->execute(array($event_key));
         $sql = $dbh->prepare("INSERT INTO block_orders(event_key, block_id, order_num) VALUE (?, ?, ?)");
         $sql->execute(array($event_key, $dbh->lastInsertId(), 0));
@@ -41,8 +41,8 @@ try {
             $sql->execute(array($last));
             $last = $sql->fetch()[0];
         }
-        $sql = $dbh->prepare("INSERT INTO blocks(event_key, start_time, duration, contents, cost, block_type, others, tag) VALUE (?, ?, ?, ?, ?, ?, ?, ?)");
-        $sql->execute(array($_POST["key"], $_POST["stime"], convertNull($_POST["duration"]), $_POST["contents"], convertNull((int)$_POST["cost"]), $_POST["type"], convertNull($_POST["others"]), $_POST["tag"]));
+        $sql = $dbh->prepare("INSERT INTO blocks(event_key, start_time, duration, contents, cost, block_type, others, page) VALUE (?, ?, ?, ?, ?, ?, ?, ?)");
+        $sql->execute(array($_POST["key"], $_POST["stime"], convertNull($_POST["duration"]), $_POST["contents"], convertNull((int)$_POST["cost"]), $_POST["type"], convertNull($_POST["others"]), $_POST["page"]));
         $sql = $dbh->prepare("INSERT INTO block_orders(event_key, block_id, order_num) VALUE (?, ?, ?)");
         $sql->execute(array($_POST["key"], $dbh->lastInsertId(), $last + 1024));
         $sql = $dbh->prepare("UPDATE events_table SET latest = ? WHERE event_key = ?");
@@ -89,26 +89,26 @@ try {
         $sql->execute(array(date("Y-m-d H:i:s"), $_POST["key"]));
         echo "変更成功";
     // ======================================タグ参照=========================
-    } elseif ($_POST["command"] == "tags") {
+    } elseif ($_POST["command"] == "pages") {
         $sql = $dbh->prepare("SELECT event_name FROM events_table WHERE event_key = ?");
         $sql->execute(array($_POST["key"]));
         $title = $sql->fetch()[0];
-        $sql = $dbh->prepare("SELECT DISTINCT(tag) FROM blocks WHERE event_key = ?");
+        $sql = $dbh->prepare("SELECT DISTINCT(page) FROM blocks WHERE event_key = ?");
         $sql->execute(array($_POST["key"]));
         $tag_text = "";
         foreach ($sql as $row) {
-            $tag = htmlspecialchars($row["tag"]);
-            $tag_text = $tag_text."<option value=\"".$tag."\">".$tag."</option>";
+            $page = htmlspecialchars($row["page"]);
+            $tag_text = $tag_text."<option value=\"".$page."\">".$page."</option>";
         }
         $data = array(
-            "tags" => $tag_text,
+            "pages" => $tag_text,
             "title" => replace(htmlspecialchars($title))
         );
         header("Content-type: application/json; charset=UTF-8");
         echo json_encode($data);
-    } elseif($_POST["command"] == "deleteTags") {
-        $sql = $dbh->prepare("DELETE FROM blocks WHERE event_key = ? AND tag = ?");
-        $sql->execute(array($_POST["key"], $_POST["tag"]));
+    } elseif($_POST["command"] == "deletePages") {
+        $sql = $dbh->prepare("DELETE FROM blocks WHERE event_key = ? AND page = ?");
+        $sql->execute(array($_POST["key"], $_POST["page"]));
 }else{
         //=================================GET処理==============================
         echo "失敗";

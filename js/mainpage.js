@@ -9,7 +9,7 @@ $(function () {
       timeout: 10000,
       data: {
         "key": event_key,
-        "tag": $("#tags").val()
+        "page": $("#pages").val()
       }
     }).done((data) => {
       $("#event-table").html(data);
@@ -18,9 +18,9 @@ $(function () {
     });
   }
   $(".btn-refresh").on("click", refresh);
-  $("#tags").on("change", () => {
+  $("#pages").on("change", () => {
     refresh();
-    localStorage.setItem("tag-" + event_key.substring(0, 4), $("#tags").val());
+    localStorage.setItem("page-" + event_key.substring(0, 4), $("#pages").val());
   });
   // タグに関する初期化処理
   $.ajax({
@@ -29,15 +29,15 @@ $(function () {
     dataType: "json",
     timeout: 10000,
     data: {
-      "command": "tags",
+      "command": "pages",
       "key": event_key
     }
   }).done((data) => {
-    $("#tags").html(data["tags"]);
-    if (localStorage.getItem("tag-" + event_key.substring(0, 4)) == null) {
-      $("#tags").prop("selectedIndex", 0);
+    $("#pages").html(data["pages"]);
+    if (localStorage.getItem("page-" + event_key.substring(0, 4)) == null) {
+      $("#pages").prop("selectedIndex", 0);
     } else {
-      $("#tags").val(localStorage.getItem("tag-" + event_key.substring(0, 4)));
+      $("#pages").val(localStorage.getItem("page-" + event_key.substring(0, 4)));
     }
     $(".event-title").html(data["title"])
     refresh();
@@ -83,7 +83,7 @@ $(function () {
     let data = {
       "command": "insert",
       "key": event_key,
-      "tag": $("#tags").val(),
+      "page": $("#pages").val(),
       "stime": $("#insert-stime").val(),
       "duration": $("#insert-duration").val(),
       "contents": contents,
@@ -148,7 +148,7 @@ $(function () {
       $("body").css("overflow", "hidden");
       $("body").css("padding-right", scroll_bar);
       // スクロールバー設定
-      const modal_content = $(modal).children(".modal_content");
+      const modal_content = $(modal).children(".modal-content");
       if ($(modal_content).height() > window.innerHeight * 0.8) {
         $(modal_content).css("overflow-y", "scroll");
       } else {
@@ -162,7 +162,7 @@ $(function () {
       $("body").css("overflow", "auto");
       return false;
     });
-    $(".modal_content").click((event) => {
+    $(".modal-content").click((event) => {
       event.stopPropagation();
     });
   });
@@ -176,7 +176,7 @@ $(function () {
     $("body").css("overflow", "hidden");
     $("body").css("padding-right", scroll_bar);
     // スクロールバー設定
-    const modal_content = $(modal).children(".modal_content");
+    const modal_content = $(modal).children(".modal-content");
     if ($(modal_content).height() > window.innerHeight * 0.8) {
       $(modal_content).css("overflow-y", "scroll");
     } else {
@@ -285,12 +285,12 @@ $(function () {
     $(e.currentTarget).next().slideToggle();
   });
   // =========================================タグ追加========
-  $(".btn-addTag").on("click", () => {
-    let tag = $("#addTag").val();
+  $(".btn-addPage").on("click", () => {
+    let page = $("#addPage").val();
     let data = {
       "command": "insert",
       "key": event_key,
-      "tag": tag,
+      "page": page,
       "stime": "00:00",
       "duration": "00:00",
       "contents": "予定を追加",
@@ -307,8 +307,8 @@ $(function () {
         data: data
       }).done((data) => {
         console.log("2");
-        $("#tags").append(`<option value=\"${tag}\">${tag}</option>`);
-        $("#tags").val(tag);
+        $("#pages").append(`<option value=\"${page}\">${page}</option>`);
+        $("#pages").val(page);
         refresh();
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.log("エラー:" + errorThrown.message);
@@ -316,13 +316,13 @@ $(function () {
     }
   });
   // =========================================タグ削除
-  $(".btn-deleteTag").on("click", () => {
+  $(".btn-deletePage").on("click", () => {
     if (window.confirm("タグを削除してもよろしいですか？")) {
-      let tag = $("#tags").val();
+      let page = $("#pages").val();
       let data = {
-        "command": "deleteTags",
+        "command": "deletePages",
         "key": event_key,
-        "tag": tag
+        "page": page
       };
       if (check_input(data) == true) {
         $.ajax({
@@ -332,7 +332,7 @@ $(function () {
           timeout: 10000,
           data: data
         }).done((data) => {
-          $(`#tags option[value=${tag}]`).remove();
+          $(`#pages option[value=${page}]`).remove();
           refresh();
         }).fail((jqXHR, textStatus, errorThrown) => {
           console.log("エラー:" + errorThrown.message);
