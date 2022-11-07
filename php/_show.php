@@ -8,7 +8,7 @@ class TimePrepare
     public $duration = "00";
     public $others = "";
     public function replace($str){
-      return preg_replace("/\/\/\/(.+)\/\/\/(.+)\/\/\//", "<a href=\"$2\" target=\"_blank\" rel=\"noopener noreferrer\">$1</a>",$str);
+      return preg_replace("/\[(.+)\]\((.+)\)/", "<a href=\"$2\" target=\"_blank\" rel=\"noopener noreferrer\">$1</a>",$str);
     }
     public function setData($row)
     {
