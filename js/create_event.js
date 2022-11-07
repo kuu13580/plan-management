@@ -1,6 +1,6 @@
 $(function(){
   // Ajax送信(イベント作成)
-  $("#create-form .btn_submit").on("click", (e) => {
+  $("#create-form .btn-submit").on("click", (e) => {
     console.log("success");
     $.ajax({
       type: "POST",

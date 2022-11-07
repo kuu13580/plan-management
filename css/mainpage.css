@@ -9,9 +9,6 @@ header {
 header .event-title {
   font-size: 2.5rem;
 }
-header .event-title a {
-  color: rgb(50, 50, 200);
-}
 header .btn {
   margin-bottom: 1rem;
   font-size: 1.6rem;
@@ -137,12 +134,12 @@ div.handle div i {
   }
 }
 
-.btn_delete,
-.btn_edit {
+.btn-delete,
+.btn-edit {
   position: relative;
 }
-.btn_delete i,
-.btn_edit i {
+.btn-delete i,
+.btn-edit i {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -150,7 +147,7 @@ div.handle div i {
 }
 
 @media screen and (max-width: 767px) {
-  .btn_edit {
+  .btn-edit {
     margin-top: 0.5rem;
   }
 }
@@ -200,9 +197,6 @@ div.handle div i {
   margin-top: calc(4rem - 0.75em);
   margin-left: 1rem;
   font-size: 2rem;
-}
-.schedule-block .schedule-title a {
-  color: rgb(50, 50, 200);
 }
 .schedule-block .schedule-title span {
   border-bottom: 1px solid #333333;
@@ -293,7 +287,7 @@ div.handle div i {
   display: flex;
 }
 
-.modal_bg {
+.modal-bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -304,7 +298,7 @@ div.handle div i {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal_content {
+.modal-content {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -317,7 +311,7 @@ div.handle div i {
   transform: translate(-50%, -50%);
 }
 
-.modal_close_btn {
+.modal-close-btn {
   position: absolute;
   top: 0;
   right: 0;
@@ -330,13 +324,13 @@ div.handle div i {
   cursor: pointer;
 }
 @media screen and (max-width: 767px) {
-  .modal_close_btn {
+  .modal-close-btn {
     width: 3rem;
     height: 3rem;
   }
 }
 
-.modal_close_btn > div {
+.modal-close-btn > div {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -347,4 +341,14 @@ div.handle div i {
 #edit-others {
   width: 25rem;
   height: 20rem;
+}
+
+.create-btn-wrapper {
+  text-align: center;
+}
+.create-btn-wrapper .modal-open {
+  padding: 0.5rem 10rem;
+  background-color: inherit;
+  border: 0.2rem #333 dashed;
+  margin: 2rem 0;
 }

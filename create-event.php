@@ -23,7 +23,7 @@ include "php/_header.php";
           <div><label for="kmPl">燃費</label><input type="number" id="kmPl" disabled><span class="unit">km/L</span></label></div>
           <div><label for="costPl">ガソリン価格</label><input type="number" id="costPl" disabled><span class="unit">¥/L</span></div>
         </div>
-        <div class="btn-wrapper"><button type="button" class="btn btn_submit">作成</button></div>
+        <div class="btn-wrapper"><button type="button" class="btn btn-submit">作成</button></div>
       </form>
     </div>
   </div>

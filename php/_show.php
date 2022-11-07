@@ -76,8 +76,8 @@ try {
   </div>
   <div class="block-right schedule-right">
     <?php echo $tp->cost; ?>
-    <div class="btn_delete btn"><i class="fa-solid fa-trash-can"></i></div>
-    <div class="modal_open btn btn_edit" data-target="modal02"><i class="fa-solid fa-pen-to-square"></i></div>
+    <div class="btn-delete btn"><i class="fa-solid fa-trash-can"></i></div>
+    <div class="modal-open btn btn-edit" data-target="modal02"><i class="fa-solid fa-pen-to-square"></i></div>
   </div>
 </div>
 <?php
@@ -119,8 +119,8 @@ try {
   </div>
   <div class="block-right transportation-right">
     <?php echo $tp->cost; ?>
-    <div class="btn_delete btn"><i class="fa-solid fa-trash-can"></i></div>
-    <div class="modal_open btn btn_edit" data-target="modal02"><i class="fa-solid fa-pen-to-square"></i></div>
+    <div class="btn-delete btn"><i class="fa-solid fa-trash-can"></i></div>
+    <div class="modal-open btn btn-edit" data-target="modal02"><i class="fa-solid fa-pen-to-square"></i></div>
   </div>
 </div>
 <?php

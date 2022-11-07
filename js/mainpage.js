@@ -17,7 +17,7 @@ $(function () {
       console.log("エラー:" + errorThrown.message);
     });
   }
-  $(".btn_refresh").on("click", refresh);
+  $(".btn-refresh").on("click", refresh);
   $("#tags").on("change", () => {
     refresh();
     localStorage.setItem("tag-" + event_key.substring(0, 4), $("#tags").val());
@@ -67,7 +67,7 @@ $(function () {
   }
   setInterval(updateCheck, 5000)
   // ====================================ブロック作成
-  $("#insert-form .btn_submit").on("click", (e) => {
+  $("#insert-form .btn-submit").on("click", (e) => {
     let type = $("input[name=insert-type]:checked").val();
     let contents;
     switch (type) {
@@ -108,7 +108,7 @@ $(function () {
     }
   });
   // ======================================ブロック削除
-  $("#event-table").on("click", ".btn_delete", (e) => {
+  $("#event-table").on("click", ".btn-delete", (e) => {
     if (window.confirm("削除してもよろしいですか？")) {
       $.ajax({
         type: "POST",
@@ -138,7 +138,7 @@ $(function () {
       $(".transportation-contents").show();
     }
   });
-  $(".modal_open").each(function () {
+  $(".modal-open").each(function () {
     $(this).click(() => {
       const target = $(this).data("target");
       const modal = document.getElementById(target);
@@ -156,8 +156,8 @@ $(function () {
       }
       return false;
     });
-    $(".modal_bg, .modal_close_btn").click(() => {
-      $(".modal_bg").fadeOut();
+    $(".modal-bg, .modal-close-btn").click(() => {
+      $(".modal-bg").fadeOut();
       $("body").css("padding-right", 0);
       $("body").css("overflow", "auto");
       return false;
@@ -167,7 +167,7 @@ $(function () {
     });
   });
   // =============================================ブロック編集モーダル
-  $("#event-table").on("click", ".btn_edit", (e) => {
+  $("#event-table").on("click", ".btn-edit", (e) => {
     let block_id = $(e.currentTarget).parents(".event-block").data("id");
     const modal = document.getElementById("modal02");
     $(modal).fadeIn();
@@ -193,7 +193,6 @@ $(function () {
         "block_id": block_id
       }
     }).done((data) => {
-      console.log(data["start_time"]);
       $("#edit-id").val(block_id);
       $("#edit-stime").val(data["start_time"]);
       $("#edit-duration").val(data["duration"]);
@@ -220,7 +219,7 @@ $(function () {
     return false;
   });
   // =======================================================ブロック編集
-  $("#edit-form .btn_submit").on("click", (e) => {
+  $("#edit-form .btn-submit").on("click", (e) => {
     let contents;
     switch ($("#edit-type").val()) {
       case "transportation":
@@ -250,7 +249,7 @@ $(function () {
         data: data
       }).done((data) => {
         refresh();
-        $(".modal_bg").click();
+        $(".modal-bg").click();
       }).fail((jqXHR, textStatus, errorThrown) => {
         console.log("エラー:" + errorThrown.message);
       });
@@ -286,7 +285,7 @@ $(function () {
     $(e.currentTarget).next().slideToggle();
   });
   // =========================================タグ追加========
-  $(".btn_addTag").on("click", () => {
+  $(".btn-addTag").on("click", () => {
     let tag = $("#addTag").val();
     let data = {
       "command": "insert",
@@ -317,7 +316,7 @@ $(function () {
     }
   });
   // =========================================タグ削除
-  $(".btn_deleteTag").on("click", () => {
+  $(".btn-deleteTag").on("click", () => {
     if (window.confirm("タグを削除してもよろしいですか？")) {
       let tag = $("#tags").val();
       let data = {
