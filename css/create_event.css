@@ -6,6 +6,12 @@
 .form-wrapper {
   max-width: 30rem;
   margin: 0 auto;
+  box-shadow: darkblue 0px 0px 10px 1px;
+  border-width: 0.2rem;
+  padding: 2rem;
+  border-radius: 2rem;
+  border-style: solid;
+  margin-top: 2rem;
 }
 
 .unit {
@@ -13,6 +19,8 @@
 }
 
 .car-options label {
+  font-size: 1.6rem;
+  font-weight: normal;
   width: 8em;
   text-align: right;
   margin-right: 2rem;
@@ -28,4 +36,19 @@
 }
 .car-options input[type=number] {
   width: 5rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+  margin: 0.5rem auto 0px;
+}
+
+label {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.btn-wrapper {
+  text-align: center;
 }
