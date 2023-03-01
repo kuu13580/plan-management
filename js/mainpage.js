@@ -40,6 +40,7 @@ $(function () {
       $("#pages").val(localStorage.getItem("page-" + event_key.substring(0, 4)));
     }
     $(".event-title").html(data["title"])
+    document.title = data["title"] + "|たびしぇあ";
     refresh();
   }).fail((jqXHR, textStatus, errorThrown) => {
     console.log("エラー:" + errorThrown.message);
