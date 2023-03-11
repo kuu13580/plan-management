@@ -7,6 +7,8 @@ class TimePrepare
     public $duration_minute = "00";
     public $duration = "00";
     public $others = "";
+    public $contents = "";
+    public $cost ="";
     public function replace($str){
       return preg_replace("/\[(.+)\]\((.+)\)/", "<a href=\"$2\" target=\"_blank\" rel=\"noopener noreferrer\">$1</a>",$str);
     }
