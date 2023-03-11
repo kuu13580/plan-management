@@ -1,5 +1,5 @@
 <?php
-class TimePrepare
+class DataPrepare
 {
     public $start_time_hour = "00";
     public $start_time_minute = "00";
@@ -46,11 +46,11 @@ try {
     $sql->bindValue(1, $event_key);
     $sql->bindValue(2, $page);
     $sql->execute();
-    $tp = new TimePrepare();
+    $data = new DataPrepare();
     $order = 0;
     // 出力
     foreach ($sql as $row) {
-        $tp->setData($row);
+        $data->setData($row);
         // ==============================================スケジュールブロック
         if ($row["block_type"] == "schedule") {
             ?>
@@ -62,22 +62,22 @@ try {
       <div><i class="fa-solid fa-xl fa-arrows-alt-v"></i></div>
     </div>
     <div class="schedule-times">
-      <div class="start-time"><span><?php echo $tp->start_time_hour.":".$tp->start_time_minute; ?></span>
+      <div class="start-time"><span><?php echo $data->start_time_hour.":".$data->start_time_minute; ?></span>
       </div>
-      <div class="duration"><?php echo $tp->duration; ?>
+      <div class="duration"><?php echo $data->duration; ?>
       </div>
     </div>
     <div class="contents">
       <div class="schedule-title">
-        <span><?php echo $tp->contents; ?>
+        <span><?php echo $data->contents; ?>
         </span>
       </div>
-      <div class="others"><?php echo $tp->others; ?>
+      <div class="others"><?php echo $data->others; ?>
       </div>
     </div>
   </div>
   <div class="block-right schedule-right">
-    <?php echo $tp->cost; ?>
+    <?php echo $data->cost; ?>
     <div class="btn-delete btn"><i class="fa-solid fa-trash-can"></i></div>
     <div class="modal-open btn btn-edit" data-target="modal02"><i class="fa-solid fa-pen-to-square"></i></div>
   </div>
@@ -85,7 +85,7 @@ try {
 <?php
 // ===========================================================移動ブロック
         } elseif ($row["block_type"] == "transportation") {
-            $tp->setData($row); ?>
+            $data->setData($row); ?>
 <div class="transportation-block event-block container"
   id="block-id-<?php echo $row["block_id"]; ?>"
   data-id="<?php echo $row["block_id"]; ?>">
@@ -93,7 +93,7 @@ try {
     <div class="handle">
       <div><i class="fa-solid fa-xl fa-arrows-alt-v"></i></div>
     </div>
-    <div class="start-time"><?php echo $tp->start_time_hour.":".$tp->start_time_minute; ?>
+    <div class="start-time"><?php echo $data->start_time_hour.":".$data->start_time_minute; ?>
     </div>
     <div class="means"><i class="fa-solid fa-2xl fa-<?php
     $icons = array(
@@ -113,14 +113,14 @@ try {
             } ?>"></i>
     </div>
     <div class="contents">
-      <div class="duration"><?php echo $tp->duration; ?>
+      <div class="duration"><?php echo $data->duration; ?>
       </div>
-      <div class="others"><?php echo $tp->others; ?>
+      <div class="others"><?php echo $data->others; ?>
       </div>
     </div>
   </div>
   <div class="block-right transportation-right">
-    <?php echo $tp->cost; ?>
+    <?php echo $data->cost; ?>
     <div class="btn-delete btn"><i class="fa-solid fa-trash-can"></i></div>
     <div class="modal-open btn btn-edit" data-target="modal02"><i class="fa-solid fa-pen-to-square"></i></div>
   </div>
