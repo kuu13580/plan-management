@@ -9,11 +9,15 @@ class DataPrepare
     public $others = "";
     public $contents = "";
     public $cost ="";
+    public $pre_start_time = "";
     public function replace($str){
       return preg_replace("/\[(.+)\]\((.+)\)/", "<a href=\"$2\" target=\"_blank\" rel=\"noopener noreferrer\">$1</a>",$str);
     }
     public function setData($row)
     {
+        if ($row["block_type"] == "schedule"){
+          $this->pre_start_time = $row["start_time"];
+        }
         $this->contents = $this->replace(htmlspecialchars($row["contents"]));
         $this->start_time_hour = (int)substr($row["start_time"], 0, 2);
         $this->start_time_minute = substr($row["start_time"], 3, 2);
@@ -93,7 +97,9 @@ try {
     <div class="handle">
       <div><i class="fa-solid fa-xl fa-arrows-alt-v"></i></div>
     </div>
-    <div class="start-time"><?php echo $data->start_time_hour.":".$data->start_time_minute; ?>
+    <div class="start-time"><?php 
+    if ($row["start_time"] != $data->pre_start_time) echo $data->start_time_hour.":".$data->start_time_minute; 
+    ?>
     </div>
     <div class="means"><i class="fa-solid fa-2xl fa-<?php
     $icons = array(

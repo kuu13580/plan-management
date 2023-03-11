@@ -231,6 +231,7 @@ div.handle div i {
 .transportation-block .start-time {
   display: flex;
   align-items: center;
+  width: 3em;
   height: 8rem;
   font-size: 2rem;
 }
